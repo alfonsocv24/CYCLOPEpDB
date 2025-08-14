@@ -24,6 +24,7 @@ import time
 import sys
 import torch
 import dgl
+import os
 from GraphGenerator import CP_Graph
 
 # =============================================================================
@@ -112,5 +113,5 @@ done = True
 form_seq = CP.format_seq(args.sequence)
 print(f'\nReport:\nCP with sequence {form_seq} belongs to the {class_name} cluster with a predicted pseudo-permeability of {pseudo_perm:.2f}')
 end = time.time()
-
+os.system(f'rm {args.sequence}.*')
 print(f'--- TOTAL TIME: {end-start:.2f} seconds ---')
